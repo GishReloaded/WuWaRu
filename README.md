@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="docs/assets/banner.svg" alt="WuwaRu — русский текст в Wuthering Waves" width="100%">
-
 # WuwaRu
 
 Интерфейс · задания · диалоги · описания персонажей
