@@ -1,0 +1,24 @@
+name: Предложение улучшения
+description: Предложить удобство, исправление терминологии или новую возможность.
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую задачу нужно решить?
+      description: Опиши конкретную ситуацию, в которой текущего поведения недостаточно.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое изменение
+      description: Как должен выглядеть результат для пользователя?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Дополнительный контекст
+      description: Примеры, исходные строки или скриншоты без личных данных.

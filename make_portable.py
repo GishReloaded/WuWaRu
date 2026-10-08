@@ -8,8 +8,10 @@ from pathlib import Path
 FILES = [
     '.gitignore', '.gitattributes', '.editorconfig',
     '.github/workflows/ci.yml', '.github/ISSUE_TEMPLATE/bug_report.yml',
+    '.github/ISSUE_TEMPLATE/feature_request.yml', '.github/ISSUE_TEMPLATE/config.yml',
     '.github/PULL_REQUEST_TEMPLATE.md',
-    'Start.cmd', 'README.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md',
+    'Start.cmd', 'Setup.cmd', 'README.md', 'LICENSE', 'SECURITY.md', 'THIRD_PARTY_NOTICES.md',
+    'docs/FAQ.md', 'docs/COMPATIBILITY.md', 'docs/assets/banner.svg',
     'CONTRIBUTING.md', 'CHANGELOG.md', 'WuwaRu.spec', 'requirements-dev.txt',
     'make_portable.py', 'config.example.json', 'glossary.json', 'overrides.json',
     'terms.json', 'choices.json', 'main.py', 'game.py', 'translator.py',

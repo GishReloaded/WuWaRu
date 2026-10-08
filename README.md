@@ -1,8 +1,8 @@
 <div align="center">
 
-# WuwaRu
+<img src="docs/assets/banner.svg" alt="WuwaRu — русский текст в Wuthering Waves" width="100%">
 
-**Русский текст в Wuthering Waves**
+# WuwaRu
 
 Интерфейс · задания · диалоги · описания персонажей
 
@@ -10,10 +10,12 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)
 [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-22C55E?style=flat-square)](LICENSE)
 ![Cache](https://img.shields.io/badge/translation-local_cache-8B5CF6?style=flat-square)
+[![CI](https://github.com/GishReloaded/WuWaRu/actions/workflows/ci.yml/badge.svg)](https://github.com/GishReloaded/WuWaRu/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/GishReloaded/WuWaRu?style=flat-square)](https://github.com/GishReloaded/WuWaRu/releases/latest)
 
 Онлайн-перевод с локальным кэшем и собственным пакетом локализации WuWa V12.
 
-[Быстрый старт](#быстрый-старт) · [Как это работает](#как-это-работает) · [Сборка](#сборка-exe) · [Правки перевода](#правки-перевода)
+[**Скачать для Windows**](https://github.com/GishReloaded/WuWaRu/releases/latest/download/WuwaRu-windows.zip) · [Установка и FAQ](docs/FAQ.md) · [Сообщить об ошибке](https://github.com/GishReloaded/WuWaRu/issues/new/choose)
 
 </div>
 
@@ -50,23 +52,49 @@ DLL не внедряются, античит не изменяется. Про�
 
 Требуется Windows 10/11, установленная и обновлённая игра, интернет для новых переводов. Для исходников нужен Python 3.10+ с Tkinter; собранный EXE работает без Python.
 
-1. Скачай или клонируй этот репозиторий и открой его папку.
-2. Подготовь внешний экстрактор и публичные ключи ресурсов:
+### Готовая Windows-сборка
+
+1. Скачай [WuwaRu-windows.zip](https://github.com/GishReloaded/WuWaRu/releases/latest/download/WuwaRu-windows.zip) и распакуй **весь архив** в отдельную папку.
+2. Дважды щёлкни **`Setup.cmd`**, чтобы подготовить инструменты.
+3. Запусти **`WuwaRu.exe`** или **`Start.cmd`**.
+4. Укажи папку с `Wuthering Waves.exe`. Выбери в игре язык текста **English**.
+5. Закрой игру и нажми **«Перевести и запустить»**.
+
+Готовая сборка работает без Python. Для полного перевода выбери **«Перевести всю базу»**, затем **«Установить пакет»**. При первой установке полный кэш создаётся на твоём ПК.
+
+### Запуск из исходников
+
+```powershell
+git clone https://github.com/GishReloaded/WuWaRu.git
+cd WuWaRu
+```
+
+1. Подготовь внешний экстрактор и публичные ключи ресурсов:
 
    ```powershell
    powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Setup-tools.ps1
    ```
 
-3. Запусти `Start.cmd` или:
+2. Запусти:
 
    ```powershell
    py -3.10 main.py gui
    ```
 
-4. Укажи папку, в которой находится `Wuthering Waves.exe`. В игре выбери **язык текста English**.
-5. Закрой игру и нажми **«Перевести и запустить»**.
+3. Укажи папку, в которой находится `Wuthering Waves.exe`. В игре выбери **язык текста English**.
+4. Закрой игру и нажми **«Перевести и запустить»**.
 
 `config.json` создаётся из `config.example.json` при первом запуске. Личные настройки не отслеживаются Git.
+
+### Файлы релиза
+
+| Файл | Назначение |
+| :--- | :--- |
+| `WuwaRu-windows.zip` | EXE, словари, исходники и установка инструментов |
+| `WuwaRu-source.zip` | Исходники, документация и словари |
+| `SHA256SUMS.txt` | Контрольные суммы двух архивов |
+
+Скачивай файлы из [Releases этого репозитория](https://github.com/GishReloaded/WuWaRu/releases). Извлечённые игровые данные и полный кэш в них не входят.
 
 | Кнопка | Действие |
 | :--- | :--- |
@@ -179,7 +207,7 @@ py -3.10 -m PyInstaller --clean --noconfirm WuwaRu.spec
 py -3.10 make_portable.py --exe dist/WuwaRu.exe --output dist/WuwaRu-windows.zip
 ```
 
-Архив содержит приложение, исходники, словари и установщик инструментов. Перед первым запуском выполни `tools/Setup-tools.ps1`. Внешний EXE, публичные ключи и игровые данные в публичный архив не включаются.
+Архив содержит приложение, исходники, словари и установщик инструментов. Перед первым запуском выполни `Setup.cmd`. Внешний EXE, публичные ключи и игровые данные в публичный архив не включаются.
 
 Только исходники:
 
@@ -221,14 +249,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Setup-tools.ps1 -Ref
 
 Исходники WuwaRu — **GPL-3.0-or-later**, полный текст в [LICENSE](LICENSE). Происхождение внешних инструментов и ссылки на соответствующие исходники — в [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Игровые ресурсы и товарные знаки принадлежат своим правообладателям.
 
-## Отправка в GitHub
+## Поддержка
 
-Создай пустой репозиторий на GitHub, затем из локального репозитория с первым коммитом выполни:
+- [Установка и частые вопросы](docs/FAQ.md).
+- [Совместимость и результаты проверки](docs/COMPATIBILITY.md).
+- [Ошибка или неточный перевод](https://github.com/GishReloaded/WuWaRu/issues/new/choose).
+- [Предложение улучшения](https://github.com/GishReloaded/WuWaRu/issues/new?template=feature_request.yml).
+- [Сообщение о проблеме безопасности](SECURITY.md).
 
-```powershell
-$repositoryUrl = Read-Host 'URL твоего репозитория'
-git remote add origin $repositoryUrl
-git push -u origin main
-```
-
-Рабочий кэш и установленный перевод останутся локально. CI появится после первой отправки; готовый Windows-архив будет доступен в разделе Actions соответствующего запуска.
+Перед отправкой скриншота скрой UID и имя аккаунта. Прикладывай только относящиеся к проблеме строки журналов.

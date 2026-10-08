@@ -41,9 +41,15 @@ jobs:
       - name: Build executable
         run: python -m PyInstaller --clean --noconfirm WuwaRu.spec
       - name: Package without local game data
-        run: python make_portable.py --exe dist/WuwaRu.exe --output dist/WuwaRu-windows.zip
+        run: |
+          python make_portable.py --exe dist/WuwaRu.exe --output dist/WuwaRu-windows.zip
+          python make_portable.py
+          python -c "from pathlib import Path; import hashlib; p=Path('dist'); (p/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256((p/n).read_bytes()).hexdigest()+'  '+n+'\n' for n in ('WuwaRu-windows.zip','WuwaRu-source.zip')),encoding='utf-8')"
       - uses: actions/upload-artifact@v4
         with:
           name: WuwaRu-windows
-          path: dist/WuwaRu-windows.zip
+          path: |
+            dist/WuwaRu-windows.zip
+            dist/WuwaRu-source.zip
+            dist/SHA256SUMS.txt
           retention-days: 14

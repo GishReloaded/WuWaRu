@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Установка и частые вопросы
+    url: https://github.com/GishReloaded/WuWaRu/blob/main/docs/FAQ.md
+    about: Проверь решение распространённых проблем перед созданием отчёта.
+  - name: Сообщить о проблеме безопасности
+    url: https://github.com/GishReloaded/WuWaRu/security
+    about: Не публикуй ключи и чувствительные данные в открытых Issues.

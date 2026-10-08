@@ -1,6 +1,7 @@
 name: Ошибка или неточный перевод
 description: Сообщить о сбое русификатора или предложить исправление текста.
 title: "[Bug] "
+labels: [bug]
 body:
   - type: markdown
     attributes:
