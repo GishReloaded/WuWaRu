@@ -1,0 +1,31 @@
+name: Ошибка или неточный перевод
+description: Сообщить о сбое русификатора или предложить исправление текста.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Перед отправкой скрой UID и имя аккаунта. Не прикладывай ключи, игровые базы, кэш или полный Client.log."
+  - type: input
+    id: version
+    attributes:
+      label: Версия клиента и ресурсов
+      placeholder: "Клиент 3.7.12, ресурсы 3.7.0"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что произошло
+      description: Шаги воспроизведения, ожидаемое поведение и фактический результат.
+    validations:
+      required: true
+  - type: textarea
+    id: translation
+    attributes:
+      label: Проблема перевода
+      description: Исходная английская строка, текущий и предлагаемый русский перевод.
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Фрагмент журнала или скриншот
+      description: Только относящиеся к ошибке строки, без личных данных.

@@ -1,0 +1,14 @@
+{
+  "game_path": "D:\\Games\\steamapps\\common\\Wuthering Waves",
+  "provider": "google_free",
+  "request_delay": 0.7,
+  "launch_translation_limit": 1000,
+  "launch_mode": "auto",
+  "launch_executable": "Wuthering Waves.exe",
+  "launch_args": [
+    "-dx12"
+  ],
+  "api_base": "https://your-provider.example/v1",
+  "api_model": "",
+  "api_key_env": "WUWA_TRANSLATE_API_KEY"
+}

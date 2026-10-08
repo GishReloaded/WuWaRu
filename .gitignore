@@ -1,0 +1,36 @@
+# Machine-specific settings and secrets
+/config.json
+.env
+.env.*
+*.pem
+*.key
+
+# Extracted game assets, translation cache, backups and logs
+/data/
+/output/
+*.db
+*.sqlite3
+*.sqlite3-*
+*.pak
+*.log
+
+# Generated binaries and external tools
+/build/
+/dist/
+/WuwaRu.exe
+*.zip
+/tools/fmodel/FModelCLI.exe
+/tools/fmodel/.data/
+/tools/pakkeys.txt
+/tools/repak/
+
+# Python and editor state
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,3 @@
+# Application runtime uses Python's standard library.
+# Only building the Windows executable needs this dependency.
+pyinstaller==6.22.3
